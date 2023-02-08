@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro/Estrangeiro</title>
+</head>
+<style>
+    body {
+        background-color: rgb(25, 28, 39);
+        color: whitesmoke;
+        font: normal 15px Arial;
+    }
+</style>
+<body>
+    <h1>Qual a Nascionalidade</h1>
+    Digite o país: <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Verificar" onclick="verifica()">
+    <div id="res">
+    <script>
+        function verifica() {
+            var pais = window.document.querySelector('input#txtnac')
+            var res = window.document.querySelector('div#res')
+            var nac = pais.value;
+            res.innerHTML = `<p>Seu país de origem é <strong>${nac}</strong></p>`
+            if (nac == 'Brasil' || nac == 'BRASIL' || nac == 'brasil') {
+                res.innerHTML = `<p>Você é <strong>Brasileiro.</strong></p>`
+            } else {
+                res.innerHTML = `<p>Você é <strong>Estrangeiro.</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
